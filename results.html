@@ -6,9 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
     <title>Document</title>
+    <link rel="stylesheet" href="./reults.css">
 </head>
+
+<!-- -->
+
 <header>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light" id="navbar" >
         <a class="navbar-brand" href="#">Navbar</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -33,16 +37,32 @@
 </header>
 
 <body>
-  <div class="card" style="width: 18rem;">
-    <select class="form-select" aria-label="Default select example">
-      <option selected>Open this select menu</option>
-      <option value="1">One</option>
-      <option value="2">Two</option>
-      <option value="3">Three</option>
-    </select>
-    <div class="card-body">
-    <h5 class="card-title">Search for a pet!</h5>
-    <input class= search placeholder="Find a Pet"></input>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="card col-3" style="width: 18rem;">
+        <select class="form-select" aria-label="Default select example">
+          <option selected>Type of animal</option>
+          <option value="1">Dog</option>
+          <option value="2">Cat</option>
+        </select>
+        <select class="form-select" aria-label="Default select example">
+          <option selected>Open this select menu</option>
+          <option value="1">One</option>
+          <option value="2">Two</option>
+          <option value="3">Three</option>
+        </select>
+        <select class="form-select" aria-label="Default select example">
+          <option selected>Open this select menu</option>
+          <option value="1">One</option>
+          <option value="2">Two</option>
+          <option value="3">Three</option>
+        </select>
+        <div class="card-body">
+        <h5 class="card-title">Search for a pet!</h5>
+        <input class= search placeholder="Find a Pet"></input>
+      </div>
+    </div>
+    <div class= "col-9" id="results"></div>
     </div>
   </div>
 
