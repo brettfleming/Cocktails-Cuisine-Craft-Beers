@@ -1,0 +1,14 @@
+/* purple color:rgb(76, 11, 136)
+blue color: rgb( 88, 193, 235)*/
+
+#navbarNav {
+    background-color: rgb(88, 193, 235);
+    border:rgb(76, 11, 136);
+}
+
+.jumbotron {
+    background-image: url("./pets.jpg");
+    background-size: cover;
+    height: 470px;
+  }
+
