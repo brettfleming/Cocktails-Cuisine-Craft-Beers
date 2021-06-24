@@ -2,13 +2,31 @@
 blue color: rgb( 88, 193, 235)*/
 
 #navbarNav {
-    background-color: rgb(88, 193, 235);
+    background-color: rgb(88, 201, 235);
     border:rgb(76, 11, 136);
 }
 
 .jumbotron {
-    background-image: url("./pets.jpg");
-    background-size: cover;
-    height: 470px;
+    background-image: url("./banner.jpg");
+    background-size:cover;
+    background-repeat: no-repeat;
   }
+
+h1{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-align: left;
+    color: white;
+}
+
+p{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    text-align: left;
+    color: white;
+}
+
 
