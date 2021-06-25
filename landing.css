@@ -1,38 +1,47 @@
-/* purple color:rgb(76, 11, 136)
-blue color: rgb( 88, 193, 235)*/
+/* brown color:rgb(136, 93, 28)
+blue color: rgb( 34, 34, 110)*/
 
 #navbarNav {
-    background-color: rgb(88, 201, 235);
-    border:rgb(76, 11, 136);
+    background-image: url(./1.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+    color: white;
+    text-shadow: black 0.3em 0.3em 0.3em;
+    text-align: center;
+}
+
+.nav.navbar-nav.li a {
+    color: white;
 }
 
 .jumbotron {
-    background-image: url("./banner.jpg");
-    background-size:cover;
-    background-repeat: no-repeat;
+    background-image: url(./2.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+    color: white;
+    text-shadow: black 0.3em 0.3em 0.3em;
+    text-align: center;
   }
 
 h1{
-    margin-top: 2%;
-    /* margin-bottom: 20px; */
+    margin-top: 20px;
+    margin-bottom: 20px;
     font-weight: bold;
     font-family: Georgia, 'Times New Roman', Times, serif;
-    text-align: left;
+    text-align: center;
     color: white;
 }
 
-h3, h2 {
-    margin-top: 2%;
-    font-weight: normal;
-    margin-bottom: 2%;
-    text-align: left;
-    color: white;
-}
+
 
 .card {
-    background-color:rgb(76, 11, 136);
+    background-image: url(./1.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+      color: white;
+      text-shadow: black 0.3em 0.3em 0.3em;
+      text-align: center;
 }
-
 
 
 
