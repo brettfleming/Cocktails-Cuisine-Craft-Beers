@@ -9,8 +9,7 @@
     <link rel="stylesheet" href="./reults.css">
 </head>
 
-<!-- -->
-
+<!--Navbar-->
 <header>
     <nav class="navbar navbar-expand-lg navbar-light" id="navbar" >
         <a class="navbar-brand" href="#">Navbar</a>
@@ -39,31 +38,34 @@
 <body>
   <div class="container-fluid">
     <div class="row">
-      <div class="card col-3" style="width: 18rem;"> 
+
+        <!--coctail search-->
+
+      <div class="card col-3" style="width: 18rem;" id="search-card"> 
         <h5 class="card-title">Coctails</h5>
         <input id="booze-input" placeholder="Margaritas, Martinis, etc..."></input>
         <div class="d-grid gap-2 d-md-block">
           <button class="btn btn-primary" type="button">Search</button>
         </div>
-        <h5 class="card-title">Resteraunts</h5>
-        <input id="booze-input" placeholder="Search city"></input>
+
+        <!--restaraunt search-->
+
+        <h5 class="card-title">Restaraunts</h5>
+        <input id="booze-input" placeholder="Zip code"></input>
         <div class="d-grid gap-2 d-md-block">
           <button class="btn btn-primary" type="button">Search</button>
         </div>
       </div>
-      <div class= "col-9" id="cat-results">
+
+      <!---->
+
+      <div class= "col-9" id="rest-results">
         <h1 id = "r-header">Restaurant Results!</h1>
-        <ul>
-          <li id = rest-results></li>
-        </ul>
       </div>
-        <div class= "col-12" id="dog-results">
+       
+      <div class= "col-12" id="drink-results">
           <h1 id ="b-header">Booze results!</h1>
-          <ul>
-            <li id booze-search></li>
-          </ul>
         </div>
-    </div>
   </div>
 
   <script src="results.js"></script>
