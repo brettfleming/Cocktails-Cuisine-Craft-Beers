@@ -1,15 +1,29 @@
-#results{
+#dog-results{
     border: 1px solid black;
-    height: 700px;
+    height: 350px;
+    background-color: rgb(136, 93, 28);
+    color: cornsilk;
+    text-shadow: 2px 2px black;
 }
+
+#cat-results{
+    border: 1px solid black;
+    height: 350px;
+    background-color: rgb(34, 34, 110);
+    color: cornsilk;
+    text-shadow: 2px 2px black;
+}
+
 
 .container-fluid{
     margin-top: 10px;
 }
 
 #navbar{
-    background-color:rgb(88,193,235) ;
+    background-image: url("Marg.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
 }
-
+/* rgb(136, 93, 28); */
 /* purple color is rbg(76,11,136)
 /* blue color is rgb(88,193,235)
