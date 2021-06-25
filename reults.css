@@ -1,17 +1,21 @@
+
 #booze-results{
     border: 1px solid black;
+
     height: 350px;
-    background-color: rgb(136, 93, 28);
-    color: cornsilk;
+    background-image: url("marg.png");
+    color: rgb(114, 80, 18);
     text-shadow: 2px 2px black;
+    background-size: cover;
 }
 
-#cat-results{
-    border: 1px solid black;
+#rest-results{
     height: 350px;
-    background-color: rgb(34, 34, 110);
+    background-image: url("bar-patio.jpg");
     color: cornsilk;
     text-shadow: 2px 2px black;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 
@@ -20,9 +24,14 @@
 }
 
 #navbar{
-    background-image: url("Marg.jpg");
+    background-image: url("marg.png");
     background-size: cover;
     background-repeat: no-repeat;
+}
+
+#search-card{
+    background-image: url("1.jpg");
+    color: cornsilk;
 }
 /* rgb(136, 93, 28); */
 /* purple color is rbg(76,11,136)
