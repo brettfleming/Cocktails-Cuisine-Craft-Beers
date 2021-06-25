@@ -25,7 +25,7 @@ function displayResults() {
                 console.log(drink)
                 let divTag = document.createElement('div');
                 let h2Tag = document.createElement("h2");
-                divTag.classList.add('card');
+                divTag.classList.add('card col-2');
                 h2Tag.classList.add('card-header')
                 h2Tag.textContent = drink.strDrink;
                 boozeResults.append(divTag);
