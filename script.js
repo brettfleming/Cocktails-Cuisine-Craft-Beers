@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+
+>>>>>>> c5ea794c75093490681135754b8328eac96167e2
 var searchFormEl = document.querySelector('#search-form');
 
 function handleSearchFormSubmit(event) {
@@ -16,4 +20,14 @@ function handleSearchFormSubmit(event) {
   location.assign(queryString);
 }
 
+<<<<<<< HEAD
 searchFormEl.addEventListener('submit', handleSearchFormSubmit);
+=======
+searchFormEl.addEventListener('submit', handleSearchFormSubmit);
+
+
+
+
+
+
+>>>>>>> c5ea794c75093490681135754b8328eac96167e2
