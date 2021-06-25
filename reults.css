@@ -1,4 +1,7 @@
-#drink-results{
+
+#booze-results{
+    border: 1px solid black;
+
     height: 350px;
     background-image: url("marg.png");
     color: rgb(114, 80, 18);
