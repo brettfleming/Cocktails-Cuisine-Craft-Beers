@@ -23,10 +23,10 @@
               <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">About Pet Adoption</a>
+              <a class="nav-link" href="#">Restaraunts</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Shelters & Rescues</a>
+              <a class="nav-link" href="#">Coctails</a>
             </li>
             <li class="nav-item">
               <a class="nav-link disabled" href="#">Pet Care</a>
@@ -39,30 +39,30 @@
 <body>
   <div class="container-fluid">
     <div class="row">
-      <div class="card col-3" style="width: 18rem;">
-        <select class="form-select" aria-label="Default select example">
-          <option selected>Type of animal</option>
-          <option value="1">Dog</option>
-          <option value="2">Cat</option>
-        </select>
-        <select class="form-select" aria-label="Default select example">
-          <option selected>Open this select menu</option>
-          <option value="1">One</option>
-          <option value="2">Two</option>
-          <option value="3">Three</option>
-        </select>
-        <select class="form-select" aria-label="Default select example">
-          <option selected>Open this select menu</option>
-          <option value="1">One</option>
-          <option value="2">Two</option>
-          <option value="3">Three</option>
-        </select>
-        <div class="card-body">
-        <h5 class="card-title">Search for a pet!</h5>
-        <input class= search placeholder="Find a Pet"></input>
+      <div class="card col-3" style="width: 18rem;"> 
+        <h5 class="card-title">Coctails</h5>
+        <input id="booze-input" placeholder="Margaritas, Martinis, etc..."></input>
+        <div class="d-grid gap-2 d-md-block">
+          <button class="btn btn-primary" type="button">Search</button>
+        </div>
+        <h5 class="card-title">Resteraunts</h5>
+        <input id="booze-input" placeholder="Search city"></input>
+        <div class="d-grid gap-2 d-md-block">
+          <button class="btn btn-primary" type="button">Search</button>
+        </div>
       </div>
-    </div>
-    <div class= "col-9" id="results"></div>
+      <div class= "col-9" id="cat-results">
+        <h1 id = "r-header">Restaurant Results!</h1>
+        <ul>
+          <li id = rest-results></li>
+        </ul>
+      </div>
+        <div class= "col-12" id="dog-results">
+          <h1 id ="b-header">Booze results!</h1>
+          <ul>
+            <li id booze-search></li>
+          </ul>
+        </div>
     </div>
   </div>
 
