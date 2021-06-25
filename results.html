@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
+  <title>Document</title>
+  <link rel="stylesheet" href="./assets/css/reults.css">
+</head>
+
+<!--Navbar-->
+<header>
+    <nav class="navbar navbar-expand-lg navbar-light" id="navbar" >
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Restaraunts</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Coctails</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+</header>
+
+<body>
+  <div class="container-fluid">
+    <div class="row">
+
+        <!--coctail search-->
+
+      <div class="card col-3" style="width: 18rem;" id="search-card"> 
+        <h5 class="card-title">Coctails</h5>
+        <input id="booze-input" placeholder="Margaritas, Martinis, etc..."></input>
+        <div class="d-grid gap-2 d-md-block">
+          <button class="btn btn-primary" type="button">Search</button>
+        </div>
+
+        <!--restaraunt search-->
+
+        <h5 class="card-title">Restaraunts</h5>
+        <input id="booze-input" placeholder="Zip code"></input>
+        <div class="d-grid gap-2 d-md-block">
+          <button class="btn btn-primary" type="button">Search</button>
+        </div>
+      </div>
+
+      <!---->
+
+      <div class= "col-9" id="rest-results">
+        <h1 id = "r-header">Restaurant Results!</h1>
+      </div>
+
+        <div class= "col-12" id="booze-results">
+
+          <h1 id ="b-header">Booze results!</h1>
+        </div>
+  </div>
+
+  <script src="./assets/js/results.js"></script>
+</body>
+
+</html>

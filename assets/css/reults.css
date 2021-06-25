@@ -3,15 +3,14 @@
     border: 1px solid black;
 
     height: 350px;
-    background-image: url("marg.png");
-    color: rgb(114, 80, 18);
+    background-image: url("../images/marg.png");
     text-shadow: 2px 2px black;
     background-size: cover;
 }
 
 #rest-results{
     height: 350px;
-    background-image: url("bar-patio.jpg");
+    background-image: url("../images/bar-patio.jpg");
     color: cornsilk;
     text-shadow: 2px 2px black;
     background-repeat: no-repeat;
@@ -24,13 +23,13 @@
 }
 
 #navbar{
-    background-image: url("marg.png");
+    background-image: url("../images/marg.png");
     background-size: cover;
     background-repeat: no-repeat;
 }
 
 #search-card{
-    background-image: url("1.jpg");
+    background-image: url("../images/1.jpg");
     color: cornsilk;
 }
 /* rgb(136, 93, 28); */
