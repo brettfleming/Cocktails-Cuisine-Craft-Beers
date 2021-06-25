@@ -1,19 +1,26 @@
-var searchFormEl = document.querySelector('#search-form');
 
-function handleSearchFormSubmit(event) {
-  event.preventDefault();
+// var searchFormEl = document.querySelector('#search-form');
 
-  var searchInputVal = document.querySelector('#search-input').value;
-  var formatInputVal = document.querySelector('#format-input').value;
+// function handleSearchFormSubmit(event) {
+//   event.preventDefault();
 
-  if (!searchInputVal) {
-    console.error('You need a search input value!');
-    return;
-  }
+//   var searchInputVal = document.querySelector('#search-input').value;
+//   var formatInputVal = document.querySelector('#format-input').value;
 
-  var queryString = './search-results.html?q=' + searchInputVal + '&format=' + formatInputVal;
+//   if (!searchInputVal) {
+//     console.error('You need a search input value!');
+//     return;
+//   }
 
-  location.assign(queryString);
-}
+//   var queryString = './search-results.html?q=' + searchInputVal + '&format=' + formatInputVal;
 
-searchFormEl.addEventListener('submit', handleSearchFormSubmit);
+//   location.assign(queryString);
+// }
+
+// searchFormEl.addEventListener('submit', handleSearchFormSubmit);
+
+
+
+
+
+
