@@ -1,11 +1,11 @@
 
 #booze-results{
-    border: 1px solid black;
-
     height: 350px;
     background-image: url("../images/marg.png");
     text-shadow: 2px 2px black;
     background-size: cover;
+    border-radius: 10px;
+    margin-left: 370px;
 }
 
 #rest-results{
@@ -15,6 +15,10 @@
     text-shadow: 2px 2px black;
     background-repeat: no-repeat;
     background-size: cover;
+    border-radius: 10px;
+    margin-left: 50px;
+    margin-bottom: 10px;
+    
 }
 
 
@@ -23,14 +27,25 @@
 }
 
 #navbar{
-    background-image: url("../images/marg.png");
+    background-image: url("../images/texture_1.jpg");
     background-size: cover;
     background-repeat: no-repeat;
+    color: cornsilk;
+    
 }
 
 #search-card{
     background-image: url("../images/1.jpg");
     color: cornsilk;
+    text-align: center;
+    margin-bottom: 50px;
+    margin-top: 15px;
+    text-shadow: 2px 2px black;
+
+}
+
+.background{
+    background-image: url("../images/textture_2.jpg");
 }
 /* rgb(136, 93, 28); */
 /* purple color is rbg(76,11,136)
