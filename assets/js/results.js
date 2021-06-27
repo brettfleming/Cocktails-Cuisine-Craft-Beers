@@ -4,8 +4,8 @@ const searchbutton = document.getElementById("drinksBtn");
 const searchinputdrink = document.getElementById("booze-input");
 let boozeResults = document.getElementById("booze-results");
 const restInput = document.getElementById("rest-input");
-const restBtn = document.getElementById("restBtn")
-const restList = document.getElementById("rest-list")
+const restBtn = document.getElementById("restBtn");
+const restList = document.getElementById("rest-list");
 // var inputdrink = 'margarita'
 // var apiUrl = 'https://www.thecocktaildb.com/api/json/v1/1/search.php?s=' + input;
 // var api = "https://api.documenu.com/v2/restaurant/4072702673999819?key=cd34a125c29432346ba6f73259e01e32";
