@@ -34,9 +34,6 @@
 </header>
   
 <body>
-<<<<<<< HEAD
-  
-=======
   <div class="container-fluid">
     <div class="row">
 
@@ -46,15 +43,16 @@
         <h5 class="card-title">Coctails</h5>
         <input id="booze-input" placeholder="Margaritas, Martinis, etc..."></input>
         <div class="d-grid gap-2 d-md-block">
-          <button class="btn btn-primary" type="button" id="drinksBtn">Search</button>
+          <button id="drinksBtn" class="btn btn-primary" type="button">Search</button>
+
         </div>
 
         <!--restaraunt search-->
 
         <h5 class="card-title">Restaraunts</h5>
-        <input id="booze-input" placeholder="Zip code"></input>
+        <input id="rest-input" placeholder="Zip code"></input>
         <div class="d-grid gap-2 d-md-block">
-          <button class="btn btn-primary" type="button" id="restBtn">Search</button>
+          <button id="restBtn" class="btn btn-primary" type="button">Search</button>
         </div>
       </div>
 
@@ -62,14 +60,15 @@
 
       <div class= "col-9" id="rest-results">
         <h1 id = "r-header">Restaurant Results!</h1>
+        <ul id="rest-list"></ul>
       </div>
-
+      
         <div class= "col-12" id="booze-results">
 
           <h1 id ="b-header">Booze results!</h1>
+          
         </div>
   </div>
->>>>>>> origin
 
   <script src="./assets/js/results.js"></script>
 </body>
