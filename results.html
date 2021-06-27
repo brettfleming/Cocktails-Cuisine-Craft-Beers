@@ -12,65 +12,68 @@
 
 <!--Navbar-->
 <header>
-    <nav class="navbar navbar-expand-lg navbar-light" id="navbar" >
-        <a class="navbar-brand" href="#">Navbar</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav">
-            <li class="nav-item active">
-              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Restaraunts</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Coctails</a>
-            </li>
-          </ul>
-        </div>
-      </nav>
+  <nav class="navbar navbar-expand-lg navbar-light" id="navbar">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Restaraunts</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Cocktails</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
 </header>
 
 <body class="background">
   <div class="container-fluid">
     <div class="row">
 
-        <!--coctail search-->
+      <!--cocktail search-->
 
-      <div class="card col-3" style="width: 18rem;" id="search-card"> 
+      <div class="card col-3" style="width: 18rem;" id="search-card">
         <h5 class="card-title">Cocktails</h5>
         <input id="booze-input" placeholder="Margaritas, Martinis, etc..."></input>
         <div class="d-grid gap-2 d-md-block">
-          <button class="btn btn-primary" type="button" id="drinksBtn">Search</button>
+          <button id="drinksBtn" class="btn btn-primary" type="button">Search</button>
+
         </div>
 
         <!--restaraunt search-->
 
-        <h5 class="card-title">Restaurants</h5>
+
+        <h5 class="card-title">Restaraunts</h5>
         <input id="rest-input" placeholder="Zip code"></input>
         <div class="d-grid gap-2 d-md-block">
-          <button class="btn btn-primary" type="button" id="restBtn">Search</button>
+
+          <button id="restBtn" class="btn btn-primary" type="button">Search</button>
         </div>
       </div>
 
       <!--restaurant results-->
 
-      <div class= "col-8" id="rest-results">
-        <h1 id = "r-header">Restaurant Results!</h1>
+      <div class="col-9" id="rest-results">
+        <h1 id="r-header">Restaurant Results!</h1>
         <ul id="rest-list"></ul>
       </div>
 
-        <div class= "col-8 justify-content-end" id="booze-results">
+      <div class="col-12" id="booze-results">
 
-          <!--cocktail results-->
+        <h1 id="b-header">Booze results!</h1>
 
-          <h1 id ="b-header">Booze results!</h1>
-        </div>
-  </div>
+      </div>
+    </div>
 
-  <script src="./assets/js/results.js"></script>
+    <script src="./assets/js/results.js"></script>
 </body>
 
 </html>
