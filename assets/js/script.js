@@ -1,8 +1,7 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
+HEAD
 
->>>>>>> c5ea794c75093490681135754b8328eac96167e2
+
+ c5ea794c75093490681135754b8328eac96167e2
 var searchFormEl = document.querySelector('#search-form');
 
 function handleSearchFormSubmit(event) {
@@ -21,11 +20,7 @@ function handleSearchFormSubmit(event) {
   location.assign(queryString);
 }
 
-<<<<<<< HEAD
 searchFormEl.addEventListener('submit', handleSearchFormSubmit);
-=======
-searchFormEl.addEventListener('submit', handleSearchFormSubmit);
-=======
 
 // var searchFormEl = document.querySelector('#search-form');
 
@@ -46,14 +41,4 @@ searchFormEl.addEventListener('submit', handleSearchFormSubmit);
 // }
 
 // searchFormEl.addEventListener('submit', handleSearchFormSubmit);
->>>>>>> 882668334a5c4f57ca28467c4ddcf097ed801d8e
 
-
-
-
-
-
-<<<<<<< HEAD
->>>>>>> c5ea794c75093490681135754b8328eac96167e2
-=======
->>>>>>> 882668334a5c4f57ca28467c4ddcf097ed801d8e
