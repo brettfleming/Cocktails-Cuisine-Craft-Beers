@@ -7,6 +7,9 @@ const restInput = document.getElementById("rest-input");
 const restBtn = document.getElementById("restBtn")
 const restList = document.getElementById("rest-list")
 // var inputdrink = 'margarita'
+
+
+
 // var apiUrl = 'https://www.thecocktaildb.com/api/json/v1/1/search.php?s=' + input;
 // var api = "https://api.documenu.com/v2/restaurant/4072702673999819?key=cd34a125c29432346ba6f73259e01e32";
 function displayResults() {
@@ -32,26 +35,46 @@ function currSearchResults(apiUrl) {
         })
         .then(function (data) {
             let drinks = data["drinks"];
-            // console.log(data)
+
+            console.log(data)
+            // function ingredients() {
+                console.log(drinks[0]["strIngredient1"]);
+            //     var ingArray = data[drinks.strIngredient1, data.drinks.strIngredient2, data.drinks.strIngredient3, data.drinks.strIngredient4, data.drinks.strIngredient5, data.drinks.strIngredient6, data.drinks.strIngredient7, data.drinks.strIngredient8, data.drinks.strIngredient9, data.drinks.strIngredient10, data.drinks.strIngredient11, data.drinks.strIngredient12, data.drinks.strIngredient13, data.drinks.strIngredient14, data.drinks.strIngredient15];
+            //     // data.ingArray.length[0]
+            //     // console.log(data.ingArray.length);
+            //     console.log(ingArray)
+                
+    // }; 
+          
+    
             drinks.forEach( drink => {
-                console.log(drink.strIngredient1)
+                // console.log(drink.strIngredient1)
                 let divTag = document.createElement('div');
                 let h2Tag = document.createElement("h2");
+                let ulTag = document.createElement("ul");
+                let liTag = document.createElement("li");
+                let liTag2 = document.createElement("li");
+                let liTag3 = document.createElement("li");
+                let liTag4 = document.createElement("li");
                 divTag.classList.add('card,col-2');
-                h2Tag.classList.add('card-header')
+                h2Tag.classList.add('card-header');
                 h2Tag.textContent = drink.strDrink;
+                liTag.textContent = drink.strIngredient1 + " " + drink.strMeasure1;
+                liTag2.textContent = drink.strIngredient2 + " " + drink.strMeasure2;
+                liTag3.textContent = drink.strIngredient3 + " " + drink.strMeasure3;
+                liTag4.textContent = drink.strIngredient4 + " " + drink.strMeasure4;
+                ulTag.append(liTag);
+                ulTag.append(liTag2);
+                ulTag.append(liTag3);
+                ulTag.append(liTag4);
                 boozeResults.append(divTag);
                 divTag.append(h2Tag);
+                divTag.append(ulTag);
+                
                 
 
             })
-            // function ingredients() {
-            //     var ingArray = data.drinks["strIngredient1", "strIngredient2", "strIngredient3", "strIngredient4", "strIngredient5", "strIngredient6", "strIngredient7", "strIngredient8", "strIngredient9", "strIngredient10", "strIngredient11", "strIngredient12", "strIngredient13", "strIngredient14", "strIngredient15"];
-            //     // data.ingArray.length[0]
-            //     // console.log(data.ingArray.length);
-            //     // console.log(ingArray.length)
-                
-    // }; 
+           
     // ingredients();
         })
     };
@@ -75,7 +98,7 @@ function displayResults2() {
                 restaurants.forEach(restaurant =>{
                     console.log(restaurant);
                     let liTag = document.createElement("li");
-                    liTag.textContent = restaurant.restaurant_name;
+                    liTag.textContent = restaurant.restaurant_name + ": " + restaurant.restaurant_phone;
                     restList.append(liTag);
 
 
@@ -89,10 +112,10 @@ function displayResults2() {
 // displayResults();
 // displayResults2();
 
-function int(event){
-    displayResults();
-    displayResults2();
-}
+// function int(event){
+//     displayResults();
+//     displayResults2();
+// }
 
 
 function buildLiquorResults() {
@@ -111,3 +134,7 @@ function buildRestResults() {
 
 searchbutton.addEventListener("click", buildLiquorResults);
 restBtn.addEventListener("click", buildRestResults);
+
+
+
+
