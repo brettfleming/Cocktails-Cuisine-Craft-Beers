@@ -4,8 +4,8 @@ const searchbutton = document.getElementById("drinksBtn");
 const searchinputdrink = document.getElementById("booze-input");
 let boozeResults = document.getElementById("booze-results");
 const restInput = document.getElementById("rest-input");
-const restBtn = document.getElementById("restBtn")
-const restList = document.getElementById("rest-list")
+const restBtn = document.getElementById("restBtn");
+const restList = document.getElementById("rest-list");
 // var inputdrink = 'margarita'
 
 

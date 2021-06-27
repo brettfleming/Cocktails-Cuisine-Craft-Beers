@@ -13,7 +13,7 @@
     height: 700px;
     background-image: url("../images/bar-patio.jpg");
     color: cornsilk;
-    text-shadow: 2px 2px black;
+    /* text-shadow: 2px 2px black; */
     background-repeat: no-repeat;
     background-size: cover;
     border-radius: 10px;
