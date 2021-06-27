@@ -12,10 +12,14 @@ const restList = document.getElementById("rest-list")
 function displayResults() {
     var inputdrink = searchinputdrink.value;
     var apiUrl = 'https://www.thecocktaildb.com/api/json/v1/1/search.php?s=' + inputdrink;
-        console.log(apiUrl)
     currSearchResults(apiUrl);
 }
 
+function removeElementChildren(parent) {
+    while (parent.firstChild) {
+        parent.removeChild(parent.firstChild);
+    }
+}
 
 
 function currSearchResults(apiUrl) {    
@@ -60,13 +64,13 @@ function displayResults2() {
         fetch("https://api.documenu.com/v2/restaurants/zip_code/" + zipcode + "?key=cd34a125c29432346ba6f73259e01e32")
             .then(function(response) {
                 if (!response.ok) {
-                    return console.log(response);
+                    // return console.log(response);
                 }
                 return response.json();
             })
             .then(function (data) {
                 var restaurants = data["data"];
-                // console.log(data);
+                console.log(data);
                 console.log(data.data[0].restaurant_name)
                 restaurants.forEach(restaurant =>{
                     console.log(restaurant);
@@ -91,6 +95,19 @@ function int(event){
 }
 
 
+function buildLiquorResults() {
+    // To prevent multiple/repeated results popping up for cocktails
+    removeElementChildren(boozeResults);
+    // To build results
+    displayResults();
+}
 
-searchbutton.addEventListener("click", int);
-restBtn.addEventListener("click", int);
+function buildRestResults() {
+    // To prevent multiple/repeated results popping up for restaurants
+    removeElementChildren(restList);
+    // To build results
+    displayResults2();
+}
+
+searchbutton.addEventListener("click", buildLiquorResults);
+restBtn.addEventListener("click", buildRestResults);
