@@ -33,14 +33,14 @@
       </nav>
 </header>
 
-<body>
+<body class="background">
   <div class="container-fluid">
     <div class="row">
 
         <!--coctail search-->
 
       <div class="card col-3" style="width: 18rem;" id="search-card"> 
-        <h5 class="card-title">Coctails</h5>
+        <h5 class="card-title">Cocktails</h5>
         <input id="booze-input" placeholder="Margaritas, Martinis, etc..."></input>
         <div class="d-grid gap-2 d-md-block">
           <button class="btn btn-primary" type="button" id="drinksBtn">Search</button>
@@ -48,20 +48,23 @@
 
         <!--restaraunt search-->
 
-        <h5 class="card-title">Restaraunts</h5>
-        <input id="booze-input" placeholder="Zip code"></input>
+        <h5 class="card-title">Restaurants</h5>
+        <input id="rest-input" placeholder="Zip code"></input>
         <div class="d-grid gap-2 d-md-block">
           <button class="btn btn-primary" type="button" id="restBtn">Search</button>
         </div>
       </div>
 
-      <!---->
+      <!--restaurant results-->
 
-      <div class= "col-9" id="rest-results">
+      <div class= "col-8" id="rest-results">
         <h1 id = "r-header">Restaurant Results!</h1>
+        <ul id="rest-list"></ul>
       </div>
 
-        <div class= "col-12" id="booze-results">
+        <div class= "col-8 justify-content-end" id="booze-results">
+
+          <!--cocktail results-->
 
           <h1 id ="b-header">Booze results!</h1>
         </div>
