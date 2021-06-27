@@ -34,7 +34,7 @@ function currSearchResults(apiUrl) {
             let drinks = data["drinks"];
             // console.log(data)
             drinks.forEach( drink => {
-                // console.log(drink.strIngredient1)
+                console.log(drink.strIngredient1)
                 let divTag = document.createElement('div');
                 let h2Tag = document.createElement("h2");
                 divTag.classList.add('card,col-2');
