@@ -1,15 +1,16 @@
 
 #booze-results{
-    height: 500px;
-    background-image: url("../images/marg.png");
-    text-shadow: 2px 2px black;
+    height: 1000px;
+    background-image: url("../images/marg.png"); 
     background-size: cover;
     border-radius: 10px;
+    font-size: 20px;
+    /* text-shadow: 2px 2px black; */
     /* margin-left: 370px; */
 }
 
 #rest-results{
-    height: 500px;
+    height: 700px;
     background-image: url("../images/bar-patio.jpg");
     color: cornsilk;
     text-shadow: 2px 2px black;
@@ -18,9 +19,11 @@
     border-radius: 10px;
     /* margin-left: 5px;
     margin-bottom: 25px; */
-    
 }
 
+#b-header {
+    text-shadow: 2px 2px black;
+}
 
 .container-fluid{
     margin-top: 10px;
