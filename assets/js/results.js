@@ -110,6 +110,7 @@ function displayResults2() {
 
             })
 };
+displayResults3();
 function displayResults3() {
     let zipcode = '55101';
     // zipcode = brewInput.value;
@@ -122,11 +123,11 @@ function displayResults3() {
             })
             .then(function (data) {
                 var breweries = data;
-                // console.log(data[0]["name"]);
+                console.log(data);
                 // console.log(data[0].name)
                 breweries.forEach(brew =>{
                     let liTag = document.createElement("li");
-                    liTag.textContent = brew.name;
+                    liTag.textContent = brew.name + ": " + brew.phone;
                     brewList.append(liTag);
                     
                 })
