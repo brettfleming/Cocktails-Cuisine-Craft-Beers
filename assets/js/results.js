@@ -150,9 +150,9 @@ function displayResults3() {
             })
             .then(function (data) {
                 var breweries = data;
-                // console.log(data);
+                console.log(data);
                 // console.log(data[0].name)
-                if (!breweries) {
+                if (breweries.length === 0) {
                     alert("No breweries found!");
                 } else {
                 breweries.forEach(brew =>{
