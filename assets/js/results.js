@@ -40,9 +40,9 @@ function currSearchResults(apiUrl) {
         .then(function (data) {
             let drinks = data["drinks"];
 
-            console.log(data)
-            // function ingredients() {
-                console.log(drinks[0]["strIngredient1"]);
+            // console.log(data)
+            // // function ingredients() {
+            //     console.log(drinks[0]["strIngredient1"]);
             //     var ingArray = data[drinks.strIngredient1, data.drinks.strIngredient2, data.drinks.strIngredient3, data.drinks.strIngredient4, data.drinks.strIngredient5, data.drinks.strIngredient6, data.drinks.strIngredient7, data.drinks.strIngredient8, data.drinks.strIngredient9, data.drinks.strIngredient10, data.drinks.strIngredient11, data.drinks.strIngredient12, data.drinks.strIngredient13, data.drinks.strIngredient14, data.drinks.strIngredient15];
             //     // data.ingArray.length[0]
             //     // console.log(data.ingArray.length);
@@ -50,7 +50,10 @@ function currSearchResults(apiUrl) {
                 
     // }; 
           
-    
+            if (!drinks) {
+                alert("Please enter valid input");
+            }
+            else {
             drinks.forEach( drink => {
                 let divTag = document.createElement('div');
                 let h2Tag = document.createElement("h2");
@@ -97,6 +100,7 @@ function currSearchResults(apiUrl) {
                 
 
             })
+        }
         })
     };
     
@@ -114,16 +118,25 @@ function displayResults2() {
             })
             .then(function (data) {
                 var restaurants = data["data"];
-                console.log(data);
-                console.log(data.data[0].restaurant_name)
+                if (!restaurants) {
+                    alert("No restaurants found!");
+                    
+                } else {
+                // console.log(data);
                 restaurants.forEach(restaurant =>{
-                    console.log(restaurant);
+                    // console.log(restaurant);
                     let liTag = document.createElement("li");
+                    let aTag = document.createElement("a");
+                    aTag.setAttribute('href', restaurant.restaurant_website);
+                    aTag.setAttribute('target', '_blank');
+                    aTag.textContent =  " " + restaurant.restaurant_website;
                     liTag.textContent = restaurant.restaurant_name + ": " + restaurant.restaurant_phone;
+                    liTag.append(aTag);
                     restList.append(liTag);
 
 
                 })
+            }
 
             })
 };
@@ -140,17 +153,27 @@ function displayResults3() {
             })
             .then(function (data) {
                 var breweries = data;
-                console.log(data);
+                // console.log(data);
                 // console.log(data[0].name)
+                if (!breweries) {
+                    alert("No breweries found!");
+                } else {
                 breweries.forEach(brew =>{
                     let liTag = document.createElement("li");
-                    let aTag = document.createElement("a");
-                    aTag.setAttribute('href', brew.website_url);
-                    aTag.textContent = brew.name + ": " + brew.phone;
-                    liTag.append(aTag)
+                    liTag.textContent = brew.name;
+                    if (brew.phone) {
+                        liTag.textContent = brew.name + ": " + brew.phone;
+                        if (brew.website_url) {
+                            let aTag = document.createElement("a");
+                            aTag.setAttribute('href', brew.website_url);
+                            aTag.setAttribute('target', '_blank');
+                            aTag.textContent = " " + brew.website_url;
+                            liTag.append(aTag)
+                        }
+                    }
                     brewList.append(liTag);
                     
-                })
+                })}
 
             })
 };
