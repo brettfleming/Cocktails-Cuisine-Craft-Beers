@@ -23,9 +23,9 @@
 
 #rest-results{
     height: 1000px;
-    background-image: url("../images/rest_patio.jpg");
+    background-image: url("../images/patio.png");
     color: black;
-    background-position: 50% 50%;
+    background-position: 40% 50%;
     background-repeat: no-repeat;
     background-size: cover;
     border-radius: 10px;
