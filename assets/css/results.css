@@ -3,27 +3,48 @@
     height: 1000px;
     background-image: url("../images/marg.png"); 
     background-size: cover;
+    background-position: 80% 80%;
     border-radius: 10px;
     font-size: 20px;
+    text-align: center;
     /* text-shadow: 2px 2px black; */
     /* margin-left: 370px; */
 }
 
+#brew-results{
+    background-image: url("../images/brews.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 60% 50%;
+    color: black;
+    text-align: center;
+    height: 1000px;
+}
+
 #rest-results{
-    height: 700px;
-    background-image: url("../images/bar-patio.jpg");
-    color: cornsilk;
-    /* text-shadow: 2px 2px black; */
+    height: 1000px;
+    background-image: url("../images/rest_patio.jpg");
+    color: black;
+    background-position: 50% 50%;
     background-repeat: no-repeat;
     background-size: cover;
     border-radius: 10px;
-    /* margin-left: 5px;
-    margin-bottom: 25px; */
+    text-align: center;
+    
 }
 
 #b-header {
-    text-shadow: 2px 2px black;
+    text-shadow: 1px 1px black;
 }
+
+#r-header{
+    text-shadow: 1px 1px black;
+}
+
+#brew-head{
+    text-shadow: 1px 1px black;
+}
+
 
 .container-fluid{
     margin-top: 10px;
@@ -37,15 +58,22 @@
     
 }
 
-#search-card{
+#jumbo{
     background-image: url("../images/1.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
     color: cornsilk;
     text-align: center;
     margin-bottom: 50px;
     margin-top: 15px;
     text-shadow: 2px 2px black;
-
 }
+
+.nav-link{
+    color: cornsilk;
+}
+
+
 
 .background{
     background-image: url("../images/2.jpg");
