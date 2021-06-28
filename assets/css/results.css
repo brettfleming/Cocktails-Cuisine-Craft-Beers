@@ -23,7 +23,7 @@
 
 #rest-results{
     height: 1000px;
-    background-image: url("../images/patio.png");
+    background-image: url("../images/restaurant.jpg");
     color: black;
     background-position: 40% 50%;
     background-repeat: no-repeat;
@@ -73,6 +73,11 @@
     color: cornsilk;
 }
 
+
+.list-style{
+    background-color: cornsilk;
+    text-align: left;
+}
 
 
 .background{
