@@ -50,5 +50,6 @@ function buildRestResults() {
 
 
 searchbutton.addEventListener("click", buildLiquorResults);
+console.log(buildLiquorResults);
 restBtn.addEventListener("click", buildRestResults);
 
