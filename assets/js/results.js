@@ -6,7 +6,7 @@ let boozeResults = document.getElementById("booze-results");
 const restInput = document.getElementById("rest-input");
 const restBtn = document.getElementById("restBtn");
 const restList = document.getElementById("rest-list");
-const brewInput = document.getElementById("brewInput");
+const brewInput = document.getElementById("brew-input");
 const brewBtn = document.getElementById('brewBtn');
 const brewList = document.getElementById('brew-list');
 // var inputdrink = 'margarita'
@@ -29,7 +29,9 @@ function removeElementChildren(parent) {
 }
 
 
-function currSearchResults(apiUrl) {    
+function currSearchResults(apiUrl) {
+    let i = 0;
+
     fetch(apiUrl)
         .then(function(response) {
             if (!response.ok) {
@@ -39,22 +41,13 @@ function currSearchResults(apiUrl) {
         })
         .then(function (data) {
             let drinks = data["drinks"];
-
-            // console.log(data)
-            // // function ingredients() {
-            //     console.log(drinks[0]["strIngredient1"]);
-            //     var ingArray = data[drinks.strIngredient1, data.drinks.strIngredient2, data.drinks.strIngredient3, data.drinks.strIngredient4, data.drinks.strIngredient5, data.drinks.strIngredient6, data.drinks.strIngredient7, data.drinks.strIngredient8, data.drinks.strIngredient9, data.drinks.strIngredient10, data.drinks.strIngredient11, data.drinks.strIngredient12, data.drinks.strIngredient13, data.drinks.strIngredient14, data.drinks.strIngredient15];
-            //     // data.ingArray.length[0]
-            //     // console.log(data.ingArray.length);
-            //     console.log(ingArray)
-                
-    // }; 
-          
             if (!drinks) {
                 alert("Please enter valid input");
             }
             else {
             drinks.forEach( drink => {
+                i++
+                if (i < 6) {
                 let divTag = document.createElement('div');
                 let h2Tag = document.createElement("h2");
                 let ulTag = document.createElement("ul");
@@ -96,8 +89,7 @@ function currSearchResults(apiUrl) {
                 boozeResults.append(divTag);
                 divTag.append(h2Tag);
                 divTag.append(ulTag);
-                
-                
+            }
 
             })
         }
@@ -107,6 +99,7 @@ function currSearchResults(apiUrl) {
     
     console.log("fetching...")
 function displayResults2() {
+    let i = 0;
     let zipcode = '';
     zipcode = restInput.value;
         fetch("https://api.documenu.com/v2/restaurants/zip_code/" + zipcode + "?key=cd34a125c29432346ba6f73259e01e32")
@@ -117,6 +110,7 @@ function displayResults2() {
                 return response.json();
             })
             .then(function (data) {
+                
                 var restaurants = data["data"];
                 if (!restaurants) {
                     alert("No restaurants found!");
@@ -124,6 +118,9 @@ function displayResults2() {
                 } else {
                 // console.log(data);
                 restaurants.forEach(restaurant =>{
+                    i++
+                    if (i <= 11) {
+                    
                     // console.log(restaurant);
                     let liTag = document.createElement("li");
                     let aTag = document.createElement("a");
@@ -134,16 +131,15 @@ function displayResults2() {
                     liTag.append(aTag);
                     restList.append(liTag);
 
-
+                    }
                 })
             }
 
             })
 };
-displayResults3();
 function displayResults3() {
-    let zipcode = '55101';
-    // zipcode = brewInput.value;
+    let zipcode = '';
+    zipcode = brewInput.value;
         fetch("https://api.openbrewerydb.org/breweries?by_postal=" + zipcode)
             .then(function(response) {
                 if (!response.ok) {
@@ -203,7 +199,7 @@ function buildBrewResults() {
 
 searchbutton.addEventListener("click", buildLiquorResults);
 restBtn.addEventListener("click", buildRestResults);
-// brewBtn.addEventListener("click", buildBrewResults);
+brewBtn.addEventListener("click", buildBrewResults);
 
 
 
