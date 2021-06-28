@@ -124,6 +124,7 @@ function displayResults2() {
                     // console.log(restaurant);
                     let liTag = document.createElement("li");
                     let aTag = document.createElement("a");
+                    liTag.classList.add('list-style')
                     aTag.setAttribute('href', restaurant.restaurant_website);
                     aTag.setAttribute('target', '_blank');
                     aTag.textContent =  " " + restaurant.restaurant_website;
@@ -157,6 +158,7 @@ function displayResults3() {
                 breweries.forEach(brew =>{
                     let liTag = document.createElement("li");
                     liTag.textContent = brew.name;
+                    liTag.classList.add('list-style')
                     if (brew.phone) {
                         liTag.textContent = brew.name + ": " + brew.phone;
                         if (brew.website_url) {
