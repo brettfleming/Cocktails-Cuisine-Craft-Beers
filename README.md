@@ -7,6 +7,8 @@ A link to our website: https://jacobbeckfeld.github.io/Cocktails-Cuisine-Craft-B
 
 
 
+
+
 As a group we created a restaurant, brewery  and and cocktail recipe search!
 
 We split into a front-end and a back-end in the begining of our project to get both the styling and the functionality working.
