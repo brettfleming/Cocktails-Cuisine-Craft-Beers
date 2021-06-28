@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
   <title>Document</title>
-  <link rel="stylesheet" href="./assets/css/reults.css">
+  <link rel="stylesheet" href="./assets/css/results.css">
 </head>
 
 <!--Navbar-->
@@ -34,7 +34,7 @@
   </nav>
 </header>
 
-<body>
+<body class="background">
   <div class="container-fluid">
     <div class="row">
 
@@ -59,17 +59,23 @@
         </div>
       </div>
 
-      <!---->
+      <!--restaurant results-->
 
       <div class="col-9" id="rest-results">
-        <h1 id="r-header">Restaurant Results!</h1>
+        <h1 id="r-header">Restaurant near you!</h1>
         <ul id="rest-list"></ul>
       </div>
 
-      <div class="col-12" id="booze-results">
+      <!--Breww results-->
 
-        <h1 id="b-header">Booze results!</h1>
+      
+      <div class="col-6" id="booze-results">
+        <h1 id="b-header">Cocktail recipies!</h1>
+      </div>
 
+      <div class="col-6" id="brew-results">
+        <h1>Breweries!</h1>
+        <ul id="brew-list"></ul>
       </div>
     </div>
 

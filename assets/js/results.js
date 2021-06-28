@@ -134,7 +134,6 @@ function displayResults3() {
             })
 };
 
-displayResults3();
 
 
 function buildLiquorResults() {
