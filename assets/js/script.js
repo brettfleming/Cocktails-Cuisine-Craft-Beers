@@ -1,44 +1,55 @@
-HEAD
+// HEAD
 
 
- c5ea794c75093490681135754b8328eac96167e2
-var searchFormEl = document.querySelector('#search-form');
+//  c5ea794c75093490681135754b8328eac96167e2
 
-function handleSearchFormSubmit(event) {
-  event.preventDefault();
+const searchbutton = document.getElementById("drinksBtn");
+const restBtn = document.getElementById("restBtn");
 
-  var searchInputVal = document.querySelector('#search-input').value;
-  var formatInputVal = document.querySelector('#format-input').value;
+// var searchFormEl = document.querySelector('#search-card');
+
+function buildLiquorResults() {
+  // To prevent multiple/repeated results popping up for cocktails
+  removeElementChildren(boozeResults);
+
+  var searchInputVal = document.getElementById('#search1').value;
+
+  
+  if (!searchInputVal) {
+    console.error('You need a search input value!');
+    return;
+  }
+
+  var queryString = './results.html?q=' + searchInputVal;
+
+  location.assign(queryString);
+  // To build results
+
+  displayResults();
+}
+
+function buildRestResults() {
+  // To prevent multiple/repeated results popping up for restaurants
+  removeElementChildren(restList);
+
+  var searchInputVal = document.getElementById('#search2').value;
+
 
   if (!searchInputVal) {
     console.error('You need a search input value!');
     return;
   }
 
-  var queryString = './search-results.html?q=' + searchInputVal + '&format=' + formatInputVal;
+  var queryString = './results.html?q=' + searchInputVal;
 
   location.assign(queryString);
+
+  // To build results
+  displayResults2();
 }
 
-searchFormEl.addEventListener('submit', handleSearchFormSubmit);
 
-// var searchFormEl = document.querySelector('#search-form');
-
-// function handleSearchFormSubmit(event) {
-//   event.preventDefault();
-
-//   var searchInputVal = document.querySelector('#search-input').value;
-//   var formatInputVal = document.querySelector('#format-input').value;
-
-//   if (!searchInputVal) {
-//     console.error('You need a search input value!');
-//     return;
-//   }
-
-//   var queryString = './search-results.html?q=' + searchInputVal + '&format=' + formatInputVal;
-
-//   location.assign(queryString);
-// }
-
-// searchFormEl.addEventListener('submit', handleSearchFormSubmit);
+searchbutton.addEventListener("click", buildLiquorResults);
+console.log(buildLiquorResults);
+restBtn.addEventListener("click", buildRestResults);
 
