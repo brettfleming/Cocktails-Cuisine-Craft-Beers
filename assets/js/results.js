@@ -52,25 +52,44 @@ function currSearchResults(apiUrl) {
           
     
             drinks.forEach( drink => {
-                // console.log(drink.strIngredient1)
                 let divTag = document.createElement('div');
                 let h2Tag = document.createElement("h2");
                 let ulTag = document.createElement("ul");
-                let liTag = document.createElement("li");
-                let liTag2 = document.createElement("li");
-                let liTag3 = document.createElement("li");
-                let liTag4 = document.createElement("li");
                 divTag.classList.add('card,col-2');
                 h2Tag.classList.add('card-header');
                 h2Tag.textContent = drink.strDrink;
-                liTag.textContent = drink.strIngredient1 + " " + drink.strMeasure1;
-                liTag2.textContent = drink.strIngredient2 + " " + drink.strMeasure2;
-                liTag3.textContent = drink.strIngredient3 + " " + drink.strMeasure3;
-                liTag4.textContent = drink.strIngredient4 + " " + drink.strMeasure4;
-                ulTag.append(liTag);
-                ulTag.append(liTag2);
-                ulTag.append(liTag3);
-                ulTag.append(liTag4);
+                if (drink.strIngredient1) {
+                    let liTag = document.createElement("li");
+                    liTag.textContent = drink.strIngredient1;
+                    if (drink.strMeasure1) {
+                        liTag.textContent = drink.strIngredient1 + " " + drink.strMeasure1;
+                    }
+                    ulTag.append(liTag);
+                }
+                if (drink.strIngredient2) {
+                    let liTag2 = document.createElement("li");
+                    liTag2.textContent = drink.strIngredient2;
+                    if (drink.strMeasure2) {
+                        liTag2.textContent = drink.strIngredient2 + " " + drink.strMeasure2;
+                    }
+                    ulTag.append(liTag2);
+                }
+                if (drink.strIngredient3) {
+                    let liTag3 = document.createElement("li");
+                    liTag3.textContent = drink.strIngredient3;
+                    if (drink.strMeasure3) {
+                        liTag3.textContent = drink.strIngredient3 + " " + drink.strMeasure3;
+                    }
+                    ulTag.append(liTag3);
+                }
+                if (drink.strIngredient4) {
+                    let liTag4 = document.createElement("li");
+                    liTag4.textContent = drink.strIngredient4;
+                    if (drink.strMeasure4) {
+                        liTag4.textContent = drink.strIngredient4 + " " + drink.strMeasure4;
+                    }
+                    ulTag.append(liTag4);
+                }
                 boozeResults.append(divTag);
                 divTag.append(h2Tag);
                 divTag.append(ulTag);
@@ -78,8 +97,6 @@ function currSearchResults(apiUrl) {
                 
 
             })
-           
-    // ingredients();
         })
     };
     
@@ -110,6 +127,7 @@ function displayResults2() {
 
             })
 };
+displayResults3();
 function displayResults3() {
     let zipcode = '55101';
     // zipcode = brewInput.value;
@@ -122,11 +140,15 @@ function displayResults3() {
             })
             .then(function (data) {
                 var breweries = data;
-                // console.log(data[0]["name"]);
+                console.log(data);
                 // console.log(data[0].name)
                 breweries.forEach(brew =>{
                     let liTag = document.createElement("li");
-                    liTag.textContent = brew.name;
+                    let aTag = document.createElement("a");
+                    // let url = brew.website_url
+                    aTag.setAttribute('href', brew.website_url);
+                    aTag.textContent = brew.name + ": " + brew.phone;
+                    liTag.append(aTag)
                     brewList.append(liTag);
                     
                 })
