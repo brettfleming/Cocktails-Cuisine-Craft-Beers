@@ -145,7 +145,6 @@ function displayResults3() {
                 breweries.forEach(brew =>{
                     let liTag = document.createElement("li");
                     let aTag = document.createElement("a");
-                    // let url = brew.website_url
                     aTag.setAttribute('href', brew.website_url);
                     aTag.textContent = brew.name + ": " + brew.phone;
                     liTag.append(aTag)
