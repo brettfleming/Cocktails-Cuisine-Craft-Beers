@@ -112,10 +112,7 @@ function displayResults2() {
 // displayResults();
 // displayResults2();
 
-// function int(event){
-//     displayResults();
-//     displayResults2();
-// }
+
 
 
 function buildLiquorResults() {
