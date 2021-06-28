@@ -7,8 +7,6 @@
     border-radius: 10px;
     font-size: 20px;
     text-align: center;
-    /* text-shadow: 2px 2px black; */
-    /* margin-left: 370px; */
 }
 
 #brew-results{
@@ -19,17 +17,20 @@
     color: black;
     text-align: center;
     height: 1000px;
+    border-radius: 10px;
+    padding: 0;
 }
 
 #rest-results{
     height: 1000px;
-    background-image: url("../images/patio.png");
+    background-image: url("../images/restaurant.jpg");
     color: black;
     background-position: 40% 50%;
     background-repeat: no-repeat;
     background-size: cover;
     border-radius: 10px;
     text-align: center;
+    padding: 0;
     
 }
 
@@ -38,11 +39,17 @@
 }
 
 #r-header{
+    background-image: url("../images/marg.png");
     text-shadow: 1px 1px black;
+    margin-bottom: 3px;
+    border-radius: 5px;
 }
 
 #brew-head{
     text-shadow: 1px 1px black;
+    background-image: url("../images/marg.png");
+    margin-bottom: 3px;
+    border-radius: 5px;
 }
 
 
@@ -73,6 +80,14 @@
     color: cornsilk;
 }
 
+
+.list-style{
+    background-color: rgba(230, 225, 225, .65);
+    text-align: left;
+    margin-top: 10px;
+    font-size: large;
+    border-radius: 3px;
+}
 
 
 .background{
