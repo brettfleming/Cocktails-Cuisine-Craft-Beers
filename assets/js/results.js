@@ -6,6 +6,9 @@ let boozeResults = document.getElementById("booze-results");
 const restInput = document.getElementById("rest-input");
 const restBtn = document.getElementById("restBtn");
 const restList = document.getElementById("rest-list");
+const brewInput = document.getElementById("brewInput");
+const brewBtn = document.getElementById('brewBtn');
+const brewList = document.getElementById('brew-list');
 // var inputdrink = 'margarita'
 
 
@@ -18,6 +21,7 @@ function displayResults() {
     currSearchResults(apiUrl);
 }
 
+// Function to prevent repeated searches from appearing when clicking button multiple times
 function removeElementChildren(parent) {
     while (parent.firstChild) {
         parent.removeChild(parent.firstChild);
@@ -104,14 +108,31 @@ function displayResults2() {
 
                 })
 
-
-
+            })
+};
+function displayResults3() {
+    let zipcode = '55101';
+    // zipcode = brewInput.value;
+        fetch("https://api.openbrewerydb.org/breweries?by_postal=" + zipcode)
+            .then(function(response) {
+                if (!response.ok) {
+                    // return console.log(response);
+                }
+                return response.json();
+            })
+            .then(function (data) {
+                var breweries = data;
+                // console.log(data[0]["name"]);
+                // console.log(data[0].name)
+                breweries.forEach(brew =>{
+                    let liTag = document.createElement("li");
+                    liTag.textContent = brew.name;
+                    brewList.append(liTag);
+                    
+                })
 
             })
 };
-// displayResults();
-// displayResults2();
-
 
 
 
@@ -129,8 +150,16 @@ function buildRestResults() {
     displayResults2();
 }
 
+function buildBrewResults() {
+    // To prevent multiple/repeated results popping up for restaurants
+    removeElementChildren(brewList);
+    // To build results
+    displayResults3();
+}
+
 searchbutton.addEventListener("click", buildLiquorResults);
 restBtn.addEventListener("click", buildRestResults);
+// brewBtn.addEventListener("click", buildBrewResults);
 
 
 
