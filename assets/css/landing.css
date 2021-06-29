@@ -1,5 +1,5 @@
-/* brown color:rgb(136, 93, 28)
-blue color: rgb( 34, 34, 110)*/
+
+/*Background color for the page*/
 
  body {
   background-image: url(../images/bg.jpg);
@@ -7,6 +7,8 @@ blue color: rgb( 34, 34, 110)*/
   background-repeat: no-repeat;
   
 } 
+
+/* Styling for the NavBar */
 
 #navbarNav {
     background-image: url(../images/1.jpg);
@@ -17,10 +19,12 @@ blue color: rgb( 34, 34, 110)*/
     text-align: center;
 }
 
+/*Styling for the text in the navigation bar*/
  a {
   color: white;
 }
 
+/*Styling for the main section in the landing page*/
 .jumbotron {
     background-image: url(../images/2.jpg);
   background-size: cover;
@@ -30,7 +34,9 @@ blue color: rgb( 34, 34, 110)*/
     text-align: center;
   }
 
-h1{
+/* Styling for the main header on the page*/
+
+h1 {
     margin-top: 20px;
     margin-bottom: 20px;
     font-weight: bold;
@@ -40,7 +46,7 @@ h1{
 }
 
 
-
+/*Styling for the image card for the cocktail and food photo*/
 .card {
     background-image: url(../images/1.jpg);
     background-size: cover;
@@ -52,7 +58,6 @@ h1{
 
 img {
     display: block;
-    /* margin-top: -17%; */
     margin-left: 15%;
     margin-right: 10%;
     width: 100%;
