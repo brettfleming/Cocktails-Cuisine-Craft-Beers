@@ -87,8 +87,12 @@
     margin-top: 10px;
     font-size: large;
     border-radius: 3px;
+    list-style-type: none;
 }
 
+.cocktail-list{
+    list-style:decimal;
+}
 
 .background{
     background-image: url("../images/2.jpg");

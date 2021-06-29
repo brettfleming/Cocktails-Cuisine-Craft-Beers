@@ -92,6 +92,7 @@ function currSearchResults(apiUrl) {
                 boozeResults.append(divTag);
                 divTag.append(h2Tag);
                 divTag.append(ulTag);
+                ulTag.classList.add("cocktail-list")
             }
 
             })
