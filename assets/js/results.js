@@ -9,18 +9,37 @@ const restList = document.getElementById("rest-list");
 const brewInput = document.getElementById("brew-input");
 const brewBtn = document.getElementById('brewBtn');
 const brewList = document.getElementById('brew-list');
+const pastDrinks = document.getElementById('past-drink');
+const pastDrinkBtn = document.querySelector('.pastDrinkBtn');
 // var inputdrink = 'margarita'
 
+let drinkArray = [];
 
 
 // var apiUrl = 'https://www.thecocktaildb.com/api/json/v1/1/search.php?s=' + input;
 // var api = "https://api.documenu.com/v2/restaurant/4072702673999819?key=cd34a125c29432346ba6f73259e01e32";
 function displayResults() {
     var inputdrink = searchinputdrink.value;
+    // drinkArray.push(inputdrink)
+    // localStorage.setItem("pastdrink", JSON.stringify(drinkArray));
     var apiUrl = 'https://www.thecocktaildb.com/api/json/v1/1/search.php?s=' + inputdrink;
-    currSearchResults(apiUrl);
+    currSearchResults(apiUrl, inputdrink);
+}
+function drinkPastList() {
+    drinkArray = JSON.parse(localStorage.getItem('pastdrink')) || [];
+    // console.log(drinksArray)
+    drinkArray.forEach(drinks => {
+        console.log(drinks)
+        let button = document.createElement('button');
+        button.classList.add("pastDrinkBtn");
+        button.textContent = drinks
+        pastDrinks.append(button);
+        
+    });
+    
 }
 
+drinkPastList();
 // Function to prevent repeated searches from appearing when clicking button multiple times
 function removeElementChildren(parent) {
     while (parent.firstChild) {
@@ -29,7 +48,7 @@ function removeElementChildren(parent) {
 }
 
 
-function currSearchResults(apiUrl) {
+function currSearchResults(apiUrl, inputdrink) {
     let i = 0;
 
     fetch(apiUrl)
@@ -48,6 +67,9 @@ function currSearchResults(apiUrl) {
                 // alert("Please enter valid input");
             }
             else {
+                drinkArray.push(inputdrink)
+                localStorage.setItem("pastdrink", JSON.stringify(drinkArray));
+
             drinks.forEach( drink => {
                 i++
                 if (i < 6) {
@@ -207,9 +229,11 @@ function buildBrewResults() {
     displayResults3();
 }
 
+
 searchbutton.addEventListener("click", buildLiquorResults);
 restBtn.addEventListener("click", buildRestResults);
 brewBtn.addEventListener("click", buildBrewResults);
+pastDrinkBtn.addEventListener("click", buildLiquorResults);
 
 
 
