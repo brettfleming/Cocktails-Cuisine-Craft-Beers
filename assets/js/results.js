@@ -20,19 +20,18 @@ let drinkArray = [];
 let restArray = [];
 let brewArray = [];
 
+// Function to display Cocktail Results
 
-// var apiUrl = 'https://www.thecocktaildb.com/api/json/v1/1/search.php?s=' + input;
-// var api = "https://api.documenu.com/v2/restaurant/4072702673999819?key=cd34a125c29432346ba6f73259e01e32";
 function displayResults() {
     var inputdrink = searchinputdrink.value || pastDrinkBtn.textContent;
-    // drinkArray.push(inputdrink)
-    // localStorage.setItem("pastdrink", JSON.stringify(drinkArray));
     var apiUrl = 'https://www.thecocktaildb.com/api/json/v1/1/search.php?s=' + inputdrink;
     currSearchResults(apiUrl, inputdrink);
 }
+
+// Displays local storage for all storage
+
 function drinkPastList() {
     drinkArray = JSON.parse(localStorage.getItem('pastdrink')) || [];
-    // console.log(drinksArray)
     drinkArray.forEach(drinks => {
         console.log(drinks)
         let button = document.createElement('button');
@@ -40,10 +39,10 @@ function drinkPastList() {
         console.log(button);
         button.textContent = drinks
         pastDrinks.append(button);
-
     });
+
+    
     restArray = JSON.parse(localStorage.getItem('pastrest')) || [];
-    // console.log(drinksArray)
     restArray.forEach(rest => {
         console.log(rest)
         let button = document.createElement('button');
@@ -51,10 +50,10 @@ function drinkPastList() {
         console.log(button);
         button.textContent = rest
         pastRest.append(button);
-
     });
+
+    
     brewArray = JSON.parse(localStorage.getItem('pastbrew')) || [];
-    // console.log(drinksArray)
     brewArray.forEach(brew => {
         console.log(brew)
         let button = document.createElement('button');
@@ -62,12 +61,11 @@ function drinkPastList() {
         console.log(button);
         button.textContent = brew
         pastBrew.append(button);
-
     });
-
 }
 
 drinkPastList();
+
 // Function to prevent repeated searches from appearing when clicking button multiple times
 function removeElementChildren(parent) {
     while (parent.firstChild) {
@@ -75,6 +73,7 @@ function removeElementChildren(parent) {
     }
 }
 
+// displays current searches
 
 function currSearchResults(apiUrl, inputdrink) {
     let i = 0;
@@ -98,8 +97,6 @@ function currSearchResults(apiUrl, inputdrink) {
                     drinkArray.push(inputdrink)
                     localStorage.setItem("pastdrink", JSON.stringify(drinkArray));
                 }
-
-
                 drinks.forEach(drink => {
                     i++
                     if (i < 6) {
@@ -146,14 +143,12 @@ function currSearchResults(apiUrl, inputdrink) {
                         divTag.append(ulTag);
                         ulTag.classList.add("cocktail-list")
                     }
-
                 })
             }
         })
 };
 
-
-console.log("fetching...")
+// Function to display restaurant results
 function displayResults2() {
     let i = 0;
     let zipcode = '';
@@ -161,13 +156,12 @@ function displayResults2() {
     fetch("https://api.documenu.com/v2/restaurants/zip_code/" + zipcode + "?key=cd34a125c29432346ba6f73259e01e32")
         .then(function (response) {
             if (!response.ok) {
-                // return console.log(response);
             }
             return response.json();
         })
         .then(function (data) {
 
-            var restaurants = data["data"];
+            var restaurants = data["data"]; // API named their array data to fetch data
             if (restaurants.length === 0) {
                 let modaltext = document.getElementById("modalText")
                 modaltext.textContent = "No restaurants found in your area please try another Zip Code!"
@@ -178,12 +172,10 @@ function displayResults2() {
                     restArray.push(zipcode)
                     localStorage.setItem("pastrest", JSON.stringify(restArray));
                 }
-                // console.log(data);
                 restaurants.forEach(restaurant => {
                     i++
                     if (i <= 11) {
 
-                        // console.log(restaurant);
                         let liTag = document.createElement("li");
                         let aTag = document.createElement("a");
                         liTag.classList.add('list-style')
@@ -193,27 +185,29 @@ function displayResults2() {
                         liTag.textContent = restaurant.restaurant_name + ": " + restaurant.restaurant_phone;
                         liTag.append(aTag);
                         restList.append(liTag);
-
                     }
                 })
             }
 
         })
 };
+
+// Function to display Breweries Results
+
 function displayResults3() {
     let zipcode = '';
     zipcode = brewInput.value || pastBrewBtn.textContent;
     fetch("https://api.openbrewerydb.org/breweries?by_postal=" + zipcode)
         .then(function (response) {
             if (!response.ok) {
-                // return console.log(response);
+            
             }
             return response.json();
         })
         .then(function (data) {
             var breweries = data;
             console.log(data);
-            // console.log(data[0].name)
+            
             if (breweries.length === 0) {
                 let modaltext = document.getElementById("modalText")
                 modaltext.textContent = "No breweries found in your area please try another Zip Code!"
@@ -269,14 +263,19 @@ function buildBrewResults() {
     // To build results
     displayResults3();
 }
+
+// The individual clear buttons
+
 function clearListDrink() {
     localStorage.removeItem("pastdrink");
     location.reload();
 }
+
 function clearListRest() {
     localStorage.removeItem("pastrest");
     location.reload();
 }
+
 function clearListBrew() {
     localStorage.removeItem("pastbrew");
     location.reload();
@@ -294,7 +293,3 @@ brewBtn.addEventListener("click", buildBrewResults);
 pastDrinkBtn.addEventListener("click", displayResults);
 pastRestBtn.addEventListener("click", displayResults2);
 pastBrewBtn.addEventListener("click", displayResults3);
-
-
-
-
