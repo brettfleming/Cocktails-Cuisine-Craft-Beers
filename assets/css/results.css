@@ -1,4 +1,7 @@
 
+
+/* Styles the cocktail section */
+
 #booze-results{
     height: 1000px;
     background-image: url("../images/marg.png"); 
@@ -8,6 +11,8 @@
     font-size: 20px;
     text-align: center;
 }
+
+/* Stlyes the brewery section */
 
 #brew-results{
     background-image: url("../images/brews.jpg");
@@ -20,6 +25,8 @@
     border-radius: 10px;
     padding: 0;
 }
+
+/* Styling for the restaurant section */
 
 #rest-results{
     height: 1000px;
@@ -34,9 +41,13 @@
     
 }
 
+/* Cocktail header */
+
 #b-header {
     text-shadow: 1px 1px black;
 }
+
+/* Resaurant header */
 
 #r-header{
     background-image: url("../images/marg.png");
@@ -44,6 +55,8 @@
     margin-bottom: 3px;
     border-radius: 5px;
 }
+
+/* Styling for the Brewery header */
 
 #brew-head{
     text-shadow: 1px 1px black;
@@ -57,6 +70,8 @@
     margin-top: 10px;
 }
 
+/* Styling for the top navbar */
+
 #navbar{
     background-image: url("../images/1.jpg");
     background-size: cover;
@@ -64,6 +79,8 @@
     color: cornsilk;
     
 }
+
+/* styling for the jumbotron */
 
 #jumbo{
     background-image: url("../images/1.jpg");
@@ -76,10 +93,13 @@
     text-shadow: 2px 2px black;
 }
 
+/* Changing the color of the nav text */
+
 .nav-link{
     color: cornsilk;
 }
 
+/* background styling for the search list */
 
 .list-style{
     background-color: rgba(230, 225, 225, .65);
@@ -90,6 +110,8 @@
     list-style-type: none;
 }
 
+/* Puts numbers in front of the cocktail ingredints list */
+
 .cocktail-list{
     list-style:decimal;
 }
@@ -97,15 +119,14 @@
 .background{
     background-image: url("../images/2.jpg");
 }
-/* rgb(136, 93, 28); */
-/* purple color is rbg(76,11,136)
-/* blue color is rgb(88,193,235)
 
-*/
+/* Gets rid of the dots in front */
 
 ul{
     list-style-type:none;
 }
+
+
 
 h5 {
     margin-top: 30px;
