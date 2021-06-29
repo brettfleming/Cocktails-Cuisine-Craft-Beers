@@ -5,6 +5,8 @@
 A link to our website: https://jacobbeckfeld.github.io/Cocktails-Cuisine-Craft-Beers/
 
 
+![screenshot](./assets/images/results_page_screenshot.png)
+![screenshot](./assets/images/landings_page_screenshot.png)
 
 
 
