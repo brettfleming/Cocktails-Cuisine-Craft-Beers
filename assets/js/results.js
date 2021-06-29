@@ -10,16 +10,22 @@ const brewInput = document.getElementById("brew-input");
 const brewBtn = document.getElementById('brewBtn');
 const brewList = document.getElementById('brew-list');
 const pastDrinks = document.getElementById('past-drink');
-const pastDrinkBtn = document.querySelector('.pastDrinkBtn');
+const pastRest =document.getElementById('past-rest');
+const pastBrew =document.getElementById('past-brew');
+const clearRest = document.getElementById("restClear");
+const clearDrink = document.getElementById("clearDrink");
+const clearBrew = document.getElementById("clearBrew");
 // var inputdrink = 'margarita'
 
 let drinkArray = [];
+let restArray = [];
+let brewArray = [];
 
 
 // var apiUrl = 'https://www.thecocktaildb.com/api/json/v1/1/search.php?s=' + input;
 // var api = "https://api.documenu.com/v2/restaurant/4072702673999819?key=cd34a125c29432346ba6f73259e01e32";
 function displayResults() {
-    var inputdrink = searchinputdrink.value;
+    var inputdrink = searchinputdrink.value || pastDrinkBtn.textContent;
     // drinkArray.push(inputdrink)
     // localStorage.setItem("pastdrink", JSON.stringify(drinkArray));
     var apiUrl = 'https://www.thecocktaildb.com/api/json/v1/1/search.php?s=' + inputdrink;
@@ -32,8 +38,31 @@ function drinkPastList() {
         console.log(drinks)
         let button = document.createElement('button');
         button.classList.add("pastDrinkBtn");
+        console.log(button);
         button.textContent = drinks
         pastDrinks.append(button);
+        
+    });
+    restArray = JSON.parse(localStorage.getItem('pastrest')) || [];
+    // console.log(drinksArray)
+    restArray.forEach(rest => {
+        console.log(rest)
+        let button = document.createElement('button');
+        button.classList.add("pastRestBtn");
+        console.log(button);
+        button.textContent = rest
+        pastRest.append(button);
+        
+    });
+    brewArray = JSON.parse(localStorage.getItem('pastbrew')) || [];
+    // console.log(drinksArray)
+    brewArray.forEach(brew => {
+        console.log(brew)
+        let button = document.createElement('button');
+        button.classList.add("pastBrewBtn");
+        console.log(button);
+        button.textContent = brew
+        pastBrew.append(button);
         
     });
     
@@ -64,11 +93,13 @@ function currSearchResults(apiUrl, inputdrink) {
                 let modaltext =document.getElementById("modalText")
                 modaltext.textContent = "No drinks found please try again!"
                 $("#myModal").modal("show");
-                // alert("Please enter valid input");
             }
             else {
+                if (inputdrink = searchinputdrink.value) {
                 drinkArray.push(inputdrink)
                 localStorage.setItem("pastdrink", JSON.stringify(drinkArray));
+                }
+            
 
             drinks.forEach( drink => {
                 i++
@@ -127,7 +158,7 @@ function currSearchResults(apiUrl, inputdrink) {
 function displayResults2() {
     let i = 0;
     let zipcode = '';
-    zipcode = restInput.value;
+    zipcode = restInput.value || pastRestBtn.textContent;
         fetch("https://api.documenu.com/v2/restaurants/zip_code/" + zipcode + "?key=cd34a125c29432346ba6f73259e01e32")
             .then(function(response) {
                 if (!response.ok) {
@@ -144,21 +175,25 @@ function displayResults2() {
                     $("#myModal").modal("show");
                     
                 } else {
+                    if (zipcode = restInput.value) {
+                    restArray.push(zipcode)
+                    localStorage.setItem("pastrest", JSON.stringify(restArray));
+                    }
                 // console.log(data);
-                restaurants.forEach(restaurant =>{
-                    i++
-                    if (i <= 11) {
-                    
-                    // console.log(restaurant);
-                    let liTag = document.createElement("li");
-                    let aTag = document.createElement("a");
-                    liTag.classList.add('list-style')
-                    aTag.setAttribute('href', restaurant.restaurant_website);
-                    aTag.setAttribute('target', '_blank');
-                    aTag.textContent =  " " + restaurant.restaurant_website;
-                    liTag.textContent = restaurant.restaurant_name + ": " + restaurant.restaurant_phone;
-                    liTag.append(aTag);
-                    restList.append(liTag);
+                    restaurants.forEach(restaurant =>{
+                        i++
+                        if (i <= 11) {
+                        
+                        // console.log(restaurant);
+                        let liTag = document.createElement("li");
+                        let aTag = document.createElement("a");
+                        liTag.classList.add('list-style')
+                        aTag.setAttribute('href', restaurant.restaurant_website);
+                        aTag.setAttribute('target', '_blank');
+                        aTag.textContent =  " " + restaurant.restaurant_website;
+                        liTag.textContent = restaurant.restaurant_name + ": " + restaurant.restaurant_phone;
+                        liTag.append(aTag);
+                        restList.append(liTag);
 
                     }
                 })
@@ -168,7 +203,7 @@ function displayResults2() {
 };
 function displayResults3() {
     let zipcode = '';
-    zipcode = brewInput.value;
+    zipcode = brewInput.value || pastBrewBtn.textContent;
         fetch("https://api.openbrewerydb.org/breweries?by_postal=" + zipcode)
             .then(function(response) {
                 if (!response.ok) {
@@ -185,6 +220,10 @@ function displayResults3() {
                     modaltext.textContent = "No breweries found in your area please try another Zip Code!"
                     $("#myModal").modal("show");
                 } else {
+                    if (zipcode = brewInput.value) {
+                    brewArray.push(zipcode)
+                    localStorage.setItem("pastbrew", JSON.stringify(brewArray));
+                    }
                 breweries.forEach(brew =>{
                     let liTag = document.createElement("li");
                     liTag.textContent = brew.name;
@@ -206,7 +245,9 @@ function displayResults3() {
             })
 };
 
-
+const pastDrinkBtn = document.querySelector('.pastDrinkBtn');
+const pastRestBtn = document.querySelector('.pastRestBtn');
+const pastBrewBtn = document.querySelector('.pastBrewBtn');
 
 function buildLiquorResults() {
     // To prevent multiple/repeated results popping up for cocktails
@@ -223,17 +264,36 @@ function buildRestResults() {
 }
 
 function buildBrewResults() {
-    // To prevent multiple/repeated results popping up for restaurants
+    // To prevent multiple/repeated results popping up for breweries
     removeElementChildren(brewList);
     // To build results
     displayResults3();
 }
+function clearListDrink() {
+    localStorage.removeItem("pastdrink");
+    location.reload();
+}
+function clearListRest() {
+    localStorage.removeItem("pastrest");
+    location.reload();
+}
+function clearListBrew() {
+    localStorage.removeItem("pastbrew");
+    location.reload();
+}
 
+
+
+clearDrink.addEventListener("click", clearListDrink);
+clearRest.addEventListener("click", clearListRest);
+clearBrew.addEventListener("click", clearListBrew);
 
 searchbutton.addEventListener("click", buildLiquorResults);
 restBtn.addEventListener("click", buildRestResults);
 brewBtn.addEventListener("click", buildBrewResults);
-pastDrinkBtn.addEventListener("click", buildLiquorResults);
+pastDrinkBtn.addEventListener("click", displayResults);
+pastRestBtn.addEventListener("click", displayResults2);
+pastBrewBtn.addEventListener("click", displayResults3);
 
 
 
