@@ -42,7 +42,10 @@ function currSearchResults(apiUrl) {
         .then(function (data) {
             let drinks = data["drinks"];
             if (!drinks) {
-                alert("Please enter valid input");
+                let modaltext =document.getElementById("modalText")
+                modaltext.textContent = "No drinks found please try again!"
+                $("#myModal").modal("show");
+                // alert("Please enter valid input");
             }
             else {
             drinks.forEach( drink => {
@@ -112,8 +115,10 @@ function displayResults2() {
             .then(function (data) {
                 
                 var restaurants = data["data"];
-                if (!restaurants) {
-                    alert("No restaurants found!");
+                if (restaurants.length === 0) {
+                    let modaltext =document.getElementById("modalText")
+                    modaltext.textContent = "No restaurants found in your area please try another Zip Code!"
+                    $("#myModal").modal("show");
                     
                 } else {
                 // console.log(data);
@@ -153,7 +158,9 @@ function displayResults3() {
                 console.log(data);
                 // console.log(data[0].name)
                 if (breweries.length === 0) {
-                    alert("No breweries found!");
+                    let modaltext =document.getElementById("modalText")
+                    modaltext.textContent = "No breweries found in your area please try another Zip Code!"
+                    $("#myModal").modal("show");
                 } else {
                 breweries.forEach(brew =>{
                     let liTag = document.createElement("li");
