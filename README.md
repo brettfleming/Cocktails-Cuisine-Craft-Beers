@@ -1,28 +1,30 @@
-# Group-Project-One
+# Cocktails, Cuisine, and Craft Beers
 
+A link to website: https://brettfleming.github.io/Cocktails-Cuisine-Craft-Beers/
 
-
-A link to our website: https://jacobbeckfeld.github.io/Cocktails-Cuisine-Craft-Beers/
-
-
-![screenshot](./assets/images/results_page_screenshot.png)
 ![screenshot](./assets/images/landings_page_screenshot.png)
 
+## Table of Contents
+- [Description](#description)
+- [Installation](#installation)
+- [Usage](#usage)
 
+## Description
+The website is a basic search engine that allows the users to search three different web API's, giving them information on local restaurants, local breweries, and Cocktail recipes. When searching for either a restaurant or a brewery all you need to do is plug in the zipcode that you would like to search in the proved search bar, this will then populate the search results area with the information that is pulled from the API for the specific zip code. The website also saves your past searches so that you can easily search them again, it does this by saving the searched zip code to local storage, once in local storage the value that was searched is saved to a button on the page. The Cocktails portion of this website functions similarly but you can either search by name or important ingredient. This also uses the same local storage function that the other searches use. 
 
+![screenshot](./assets/images/results_page_screenshot.png)
 
-As a group we created a restaurant, brewery  and and cocktail recipe search!
+## Installation
+simply cloning down the GitHub repo will be enough to run the website otherwise click the link above to be taken to the website
 
-We split into a front-end and a back-end in the begining of our project to get both the styling and the functionality working.
-    By doing this we were able to cut the time it would take us to build the whole website.
-    We had one team form the UI and styling of both HTML pages and the other create the functionality through javascript.
+## Usage 
+The main usage for this website is for users to search for local restaurants and breweries in their area and get information about them, and if they want to look up cocktails to make at home they can! This website has a dual purpose so that any user can use it. 
 
-Our website starts at our landing page that describes what you are able to search for.
-    When you press restaurants cocktails or brewries link it will take you to the search page which will then allow you to search through three different APIs.
+## Contributing
 
-On the results HTML page you are able to choose what you want to search; either cocktail recipies, resturants in a specific area by zip code or a brewery ny a specific zip code.
-    Each search option searches through a different API to find what the user is looking for.
-
-With this you will be able to either find a restaurant or a brewery near you, or if you'd rather, make a cocktail at home!
+- JacobBeckfeld
+- blen90
+- Karina5151
+- YueshiaVue
 
 
